@@ -35,12 +35,12 @@ public class Main extends Application {
     }
 
     private MenuBar createMenu() {
-        SeparatorMenuItem separatorMenuItem = new SeparatorMenuItem();
+        SeparatorMenuItem separatorMenuItem1 = new SeparatorMenuItem();
         Menu fileMenu = new Menu("File");
         MenuItem newItem = new MenuItem("New");
         newItem.setOnAction(actionEvent -> System.out.println("Create new file"));
         MenuItem saveItem = new MenuItem("Save");
-        fileMenu.getItems().addAll(newItem,separatorMenuItem,saveItem);
+        fileMenu.getItems().addAll(newItem,separatorMenuItem1,saveItem);
 
         Menu moreMenu = new Menu("More");
         MenuItem aboutItem = new MenuItem("About");
@@ -50,7 +50,8 @@ public class Main extends Application {
             Platform.exit();
             System.exit(0);
         });
-        moreMenu.getItems().addAll(aboutItem,separatorMenuItem,exitItem);
+        SeparatorMenuItem separatorMenuItem2 = new SeparatorMenuItem();
+        moreMenu.getItems().addAll(aboutItem,separatorMenuItem2,exitItem);
 
         MenuBar menuBar = new MenuBar();
         menuBar.getMenus().addAll(fileMenu, moreMenu);
